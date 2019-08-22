@@ -15,6 +15,12 @@ import { RouterModule } from '@angular/router';
 import { appRoutes } from './routes';
 import { UserService } from './shared/user.service';
 
+//auth
+import { AuthGuard } from './auth/auth.guard';
+
+
+import { from } from 'rxjs';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +35,7 @@ import { UserService } from './shared/user.service';
     FormsModule,
     HttpClientModule
   ],
-  providers: [UserService],
+  providers: [AuthGuard, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

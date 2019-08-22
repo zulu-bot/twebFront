@@ -23,6 +23,29 @@ export class UserService {
   setToken(token: string){
     localStorage.setItem('token', token);
   }
+
+  deletToken(){
+    localStorage.removeItem('token');
+  }
+
+  getUserInfo(){
+    var token = localStorage.getItem('token');
+    if (token){
+      var userInfo =atob(token.split('.')[1]);
+      return JSON.parse(userInfo);
+    }
+    else
+      return null;
+  }
+
+  isLogged(){
+    var userInfo = this.getUserInfo();
+    if (userInfo)
+      return userInfo.exp > Date.now() / 1000;
+    else
+      return false;
+  }
+
 }
 
 
