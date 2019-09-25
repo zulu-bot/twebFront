@@ -1,0 +1,25 @@
+<body>
+        <div id="header">
+          <h1>Web Reporting System Manager S.A</h1>
+        </div>
+        <div id="content">
+          <h2>Perfil de Usuario</h2>
+          <p>Bienvenido, "Nombre"</p>
+          <img mat-list-avatar src="https://data.whicdn.com/images/332220993/original.jpg" width="180" height="180">
+          <br>
+          <button mat-fab color="primary" [routerLink]="['/adminusuario']">Administrar Perfil</button>
+        </div>
+    
+        <h2>Sistema de reportes</h2>
+        <br>
+        <textarea name="incidencia" rows="1" cols="45">Id de incidencia</textarea>
+                 <br>
+                 <button mat-fab color="primary" [routerLink]="['/reportes']">Buscar incidencia</button> &nbsp; <button mat-fab color="primary" [routerLink]="['/investigador']">Asignar Investigador</button>
+                 <br>
+                 <h2>Generar nuevo reporte</h2>
+                 <br>
+                 <button mat-fab color="primary" [routerLink]="['/generarreporte']">Generar Nuevo Reporte</button>
+                
+       
+      </body>
+    
