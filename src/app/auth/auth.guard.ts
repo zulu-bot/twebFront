@@ -17,6 +17,9 @@ export class AuthGuard implements CanActivate {
         this.userService.deletToken();
         return false;
       }
+
+      
+
     return true;
   }
   

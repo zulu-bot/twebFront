@@ -9,6 +9,7 @@ import { LogInComponent } from '../user/log-in/log-in.component';
 })
 export class UserService {
   selectedUser: User = {
+    idUsuario: '',
     nombre: '',
     email: '',
     password: ''
@@ -49,6 +50,8 @@ export class UserService {
     else
       return false;
   }
+
+
 
 }
 
