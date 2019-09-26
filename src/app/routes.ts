@@ -11,6 +11,7 @@ import { AdministradorComponent } from './administrador/administrador.component'
 import{ InvestigadorComponent } from './investigador/investigador.component';
 import{ ListperfilComponent } from './listperfil/listperfil.component';
 import { ListadecasosComponent } from './listadecasos/listadecasos.component';
+import { RegisterComponent } from './user/register/register.component';
 import { Component } from '@angular/core';
 export const appRoutes: Routes =[
     {
@@ -54,5 +55,10 @@ export const appRoutes: Routes =[
     {
         path: 'listadecasos',
         component: ListadecasosComponent
+    },
+    {
+        path: 'register',
+        component: UserComponent,
+        children: [{path:'',component: RegisterComponent}]
     }
 ];
