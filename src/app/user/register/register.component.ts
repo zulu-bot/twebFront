@@ -25,9 +25,9 @@ export class RegisterComponent implements OnInit {
         err => {
           if (err.status === 422) {
             this.serverErrorMessages = err.error.join('<br/>');
-          }
-          else
+          }else{
             this.serverErrorMessages = 'Something went wrong.Please contact admin.';
+          }
         }
       );
     }
