@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { User } from './user.model';
 import { LogInComponent } from '../user/log-in/log-in.component';
+import { RouterLink } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,8 @@ export class UserService {
   selectedUser: User = {
     nombre: '',
     email: '',
-    password: ''
+    password: '',
+    rol: ''
   };
 
   constructor(private http: HttpClient) { }
@@ -38,12 +40,19 @@ export class UserService {
       return null;
   }
 
+
   isLogged(){
     var userInfo = this.getUserInfo();
     if (userInfo)
       return userInfo.exp > Date.now() / 1000;
     else
       return false;
+  }
+
+  getRolUsuario(){
+    let usuario = this.getUserInfo();
+    return(usuario["rol"]);
+    
   }
 
 }

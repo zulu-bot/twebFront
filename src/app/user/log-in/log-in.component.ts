@@ -16,7 +16,8 @@ export class LogInComponent implements OnInit {
 
   model ={
     email: '',
-    password: ''
+    password: '',
+    rol: ''
   }
   emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   serverErrorMessages: string;
@@ -28,7 +29,25 @@ export class LogInComponent implements OnInit {
     this.userService.login(form.value).subscribe(
       res => {
         this.userService.setToken(res['token']);
-        this.router.navigateByUrl('/userprofile');
+        let rol = this.userService.getRolUsuario();
+        if(rol == 'administrador'){
+          this.router.navigateByUrl('/administrador');
+        }
+        if(rol == 'investigador'){
+          this.router.navigateByUrl('/investigador');
+        }
+        if(rol == 'responsable'){
+          this.router.navigateByUrl('/responsable');
+        }
+        if(rol == 'empleado'){
+          this.router.navigateByUrl('/userprofile');
+        }
+        if(rol == 'asociado'){
+          this.router.navigateByUrl('/userprofile');
+        }
+
+        
+        
       },
       err => {
         this.serverErrorMessages = err.console.error.message;

@@ -1,0 +1,23 @@
+<body>
+        <div id="header">
+          <h1>Investigador</h1>
+        </div>
+        <div id="content">
+          <h2>Lista de casos asignados</h2>
+          <button mat-fab color="primary" [routerLink]="['/listadecasos']">Casos</button>
+          
+        </div>
+
+        <h2>Sistema de reportes</h2>
+        <br>
+        <textarea name="incidencia" rows="1" cols="45">Id de incidencia</textarea>
+                 <br>
+                 <button mat-fab color="primary" [routerLink]="['/reportes']">Buscar incidencia</button>
+    
+                <br>
+                 <h2>Generar nuevo reporte</h2>
+                 <br>
+                 <button mat-fab color="primary" [routerLink]="['/generarreporte']">Generar Nuevo Reporte</button>
+                
+       
+      </body>
