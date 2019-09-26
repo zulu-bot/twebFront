@@ -10,12 +10,13 @@ import { UserService } from '../../shared/user.service';
 })
 export class RegisterComponent implements OnInit {
   emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  
   showSucessMessage: boolean;
   serverErrorMessages: string;
    
   onSubmit(form: NgForm) {
-      this.userService.register(form.value).subscribe(
+    console.log("asdf");
+    console.log(form.value);
+    this.userService.register(form.value).subscribe(
         res => {
           this.showSucessMessage = true;
           setTimeout(() => this.showSucessMessage = false, 4000);
