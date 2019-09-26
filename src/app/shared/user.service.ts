@@ -11,6 +11,7 @@ export class UserService {
   selectedUser: User = {
     idUsuario: '',
     nombre: '',
+    rol: '',
     email: '',
     password: ''
   };

@@ -1,23 +1,28 @@
 <form #registerForm="ngForm" (ngSubmit)="registerForm.valid && onSubmit(registerForm)">
     <input type="text" #name="ngModel" [(ngModel)]="userService.selectedUser.idUsuario" name="idUsuario" placeholder="ID"
-    required  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !idUsuario.valid }">
-    <div *ngIf="signUpForm.submitted && !idUsuario.valid">
+    required  [ngClass]="{'invalid-textbox' :registerForm.submitted && !idUsuario.valid }">
+    <div *ngIf="registerForm.submitted && !idUsuario.valid">
         <label class="validation-message">Campo Requerido.</label>
     </div>
     <input type="text" #name="ngModel" [(ngModel)]="userService.selectedUser.name" name="name" placeholder="Name"
     required  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !name.valid }">
-    <div *ngIf="signUpForm.submitted && !name.valid">
+    <div *ngIf="registerForm.submitted && !name.valid">
+      <label class="validation-message">Campo Requerido.</label>
+    </div>
+    <input type="text" #name="ngModel" [(ngModel)]="userService.selectedUser.rol" name="rol" placeholder="Rol"
+    required  [ngClass]="{'invalid-textbox' :registerForm.submitted && !rol.valid }">
+    <div *ngIf="registerForm.submitted && !rol.valid">
       <label class="validation-message">Campo Requerido.</label>
     </div>
     <input type="text" #email="ngModel" [(ngModel)]="userService.selectedUser.email" name="email" placeholder="Email"
-    required [pattern]="emailRegex"  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !email.valid }">
-    <div *ngIf="signUpForm.submitted && email.errors">
+    required [pattern]="emailRegex"  [ngClass]="{'invalid-textbox' :registerForm.submitted && !email.valid }">
+    <div *ngIf="registerForm.submitted && email.errors">
       <label *ngIf="email.errors.required" class="validation-message">Campo Requerido.</label>
       <label *ngIf="email.errors.pattern" class="validation-message">No es un email valido.</label>
     </div>
     <input type="password" #password="ngModel" [(ngModel)]="userService.selectedUser.password" name="password" placeholder="Password"
-    minlength="4" required [ngClass]="{'invalid-textbox' :signUpForm.submitted && !password.valid }">
-    <div *ngIf="signUpForm.submitted && password.errors">
+    minlength="4" required [ngClass]="{'invalid-textbox' :registerForm.submitted && !password.valid }">
+    <div *ngIf="registerForm.submitted && password.errors">
       <label *ngIf="password.errors.required" class="validation-message">Campo Requerido.</label>
       <label *ngIf="password.errors.minlength" class="validation-message">Minimo 4 caracteres.</label>
     </div>

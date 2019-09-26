@@ -35,6 +35,7 @@ export class RegisterComponent implements OnInit {
       this.userService.selectedUser = {
         idUsuario: '',
         nombre: '',
+        rol: '',
         email: '',
         password: ''
       };
