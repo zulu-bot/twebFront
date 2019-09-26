@@ -10,16 +10,22 @@ import { RouterLink } from '@angular/router';
 })
 export class UserService {
   selectedUser: User = {
+    idUsuario: '',
     nombre: '',
+    rol: '',
     email: '',
-    password: '',
-    rol: ''
+    password: ''
+    
   };
 
   constructor(private http: HttpClient) { }
 
   login(authCredentials){
     return this.http.post(environment.apiBaseUrl + '/authenticate', authCredentials);
+  }
+  
+  register(user:User){
+    return this.http.post(environment.apiBaseUrl+'/register',user);
   }
 
   setToken(token: string){

@@ -29,6 +29,7 @@ import { AdministradorComponent } from './administrador/administrador.component'
 import { InvestigadorComponent } from './investigador/investigador.component';
 import { ListperfilComponent } from './listperfil/listperfil.component';
 import { ListadecasosComponent } from './listadecasos/listadecasos.component';
+import { RegisterComponent } from './user/register/register.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { ListadecasosComponent } from './listadecasos/listadecasos.component';
     AdministradorComponent,
     InvestigadorComponent,
     ListperfilComponent,
-    ListadecasosComponent
+    ListadecasosComponent,
+    RegisterComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
