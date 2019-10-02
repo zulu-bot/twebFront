@@ -1,22 +1,49 @@
-<body>
-    <div id="header">
-      <h1>Gestion De Reportes</h1>
-    </div>
-    <div id="content">
-        <h2>Descripcion del incidente</h2>
-       
-        <br>
-        <textarea name="comentarios" rows="10" cols="45">Describa el incidente de manera clara</textarea>
-        <br>
-        </div>
-  
+<form #incidentForm="ngForm" (ngSubmit)="incidentForm.valid && onSubmit(incidentForm)">
+  <input type="text" #name="ngModel" [(ngModel)]="incidentsService.selectedIncident.idIncidente" name="idIncidente" placeholder="idIncidente" required [ngClass]="{'invalid-textbox' :incidentForm.submitted && !idIncidente.valid }">
+  <div *ngIf="incidentForm.submitted && !idIncidente.valid">
+      <label class="validation-message">Campo Requerido.</label>
+  </div>
+  <input type="text" #name="ngModel" [(ngModel)]="incidentsService.selectedIncident.nivelImpacto" name="nivelImpacto" placeholder="Nivel de impacto" required [ngClass]="{'invalid-textbox' :incidentForm.submitted && !name.valid }">
+  <div *ngIf="incidentForm.submitted && !nivelImpacto.valid">
+      <label class="validation-message">Campo Requerido.</label>
+  </div>
+  <input type="text" #name="ngModel" [(ngModel)]="incidentsService.selectedIncident.idEmpleado" name="idEmpleado" placeholder="idEmpleado" required [ngClass]="{'invalid-textbox' :incidentForm.submitted && !name.valid }">
+  <div *ngIf="incidentForm.submitted && !nivelImpacto.valid">
+      <label class="validation-message">Campo Requerido.</label>
+  </div>
+  <input type="text" #name="ngModel" [(ngModel)]="incidentsService.selectedIncident.idInvestigador" name="idInvestigador" placeholder="idInvestigador" required [ngClass]="{'invalid-textbox' :incidentForm.submitted && !name.valid }">
+  <div *ngIf="incidentForm.submitted && !nivelImpacto.valid">
+      <label class="validation-message">Campo Requerido.</label>
+  </div>
+  <input type="text" #name="ngModel" [(ngModel)]="incidentsService.selectedIncident.descripcion" name="descripcion" placeholder="descripcion" required [ngClass]="{'invalid-textbox' :incidentForm.submitted && !name.valid }">
+  <div *ngIf="incidentForm.submitted && !nivelImpacto.valid">
+      <label class="validation-message">Campo Requerido.</label>
+  </div>
+ <input type="text" #name="ngModel" [(ngModel)]="incidentsService.selectedIncident.fechaInicio" name="fechaInicio" placeholder="fechaInicio" required [ngClass]="{'invalid-textbox' :incidentForm.submitted && !name.valid }">
+      <div *ngIf="incidentForm.submitted && !nivelImpacto.valid">
+          <label class="validation-message">Campo Requerido.</label>
+      </div>
+      <input type="text" #name="ngModel" [(ngModel)]="incidentsService.selectedIncident.fechaFinal" name="fechaFinal" placeholder="fechaFinal" required [ngClass]="{'invalid-textbox' :incidentForm.submitted && !name.valid }">
+      <div *ngIf="incidentForm.submitted && !nivelImpacto.valid">
+          <label class="validation-message">Campo Requerido.</label>
+      </div>
+      <input type="text" #name="ngModel" [(ngModel)]="incidentsService.selectedIncident.estado" name="estado" placeholder="estado" required [ngClass]="{'invalid-textbox' :incidentForm.submitted && !name.valid }">
+      <div *ngIf="incidentForm.submitted && !nivelImpacto.valid">
+          <label class="validation-message">Campo Requerido.</label>
+      </div>
+      <input type="submit" value="Enviar Incidente">
     <br>
-    <textarea name="fechadeinicio" rows="1" cols="45">Fecha De inicio</textarea>
-   <br>
-   <FORM>
+    <button mat-fab color="primary" [routerLink]="['/administrador']">Volver</button>
+</form>
 
-        <input name="button1" type="button" 
-        onclick='alert("Incidente Guardado")' value="Guardar incidente" />
-        </FORM>
-</body>
+
+<!-- Success message -->
+<div class="success" *ngIf="showSucessMessage">
+  Saved successfully
+</div>
+
+<!-- Error message -->
+<div class="alert" *ngIf="serverErrorMessages">
+  {{serverErrorMessages}}
+</div>
 
