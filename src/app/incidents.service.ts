@@ -1,20 +1,22 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { environment } from '../../environments/environment';
-import { User } from './user.model';
-import { LogInComponent } from '../user/log-in/log-in.component';
+import { environment } from '../environments/environment';
+import { Incidents } from './shared/incidents.model';
 import { RouterLink } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
-  selectedUser: User = {
-    idUsuario: '',
-    nombre: '',
-    rol: '',
-    email: '',
-    password: ''
+export class IncidentsService {
+  selectedIncident: Incidents = {
+    idIncidente: '',
+	nivelImpacto: '',
+	idEmpleado: '',
+	idInvestigador: '',
+    descripcion: '',
+	fechaInicio: '',
+	fechaFinal: '',
+	estado: ''
     
   };
 
@@ -24,8 +26,8 @@ export class UserService {
     return this.http.post(environment.apiBaseUrl + '/authenticate', authCredentials);
   }
   
-  register(user:User){
-    return this.http.post(environment.apiBaseUrl+'/register',user);
+  register(incident:Incidents){
+    return this.http.post(environment.apiBaseUrl+'/registerincident',incident);
   }
 
   setToken(token: string){
@@ -62,5 +64,6 @@ export class UserService {
   }
 
 }
+
 
 
