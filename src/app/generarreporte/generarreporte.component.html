@@ -1,4 +1,4 @@
-<form #incidentForm="ngForm" (ngSubmit)="incidentForm.valid && onSubmit(incidentForm)">
+<form #incidentForm="ngForm" (ngSubmit)="generarreporteForm.valid && onSubmit(generarreporteForm)">
   <input type="text" #name="ngModel" [(ngModel)]="incidentsService.selectedIncident.idIncidente" name="idIncidente" placeholder="idIncidente" required [ngClass]="{'invalid-textbox' :incidentForm.submitted && !idIncidente.valid }">
   <div *ngIf="incidentForm.submitted && !idIncidente.valid">
       <label class="validation-message">Campo Requerido.</label>
