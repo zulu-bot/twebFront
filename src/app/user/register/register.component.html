@@ -3,8 +3,8 @@
     <div *ngIf="registerForm.submitted && !idUsuario.valid">
         <label class="validation-message">Campo Requerido.</label>
     </div>
-    <input type="text" #name="ngModel" [(ngModel)]="userService.selectedUser.name" name="name" placeholder="Name" required [ngClass]="{'invalid-textbox' :registerForm.submitted && !name.valid }">
-    <div *ngIf="registerForm.submitted && !name.valid">
+    <input type="text" #name="ngModel" [(ngModel)]="userService.selectedUser.nombre" name="nombre" placeholder="Nombre" required [ngClass]="{'invalid-textbox' :registerForm.submitted && !nombre.valid }">
+    <div *ngIf="registerForm.submitted && !nombre.valid">
         <label class="validation-message">Campo Requerido.</label>
     </div>
     <input type="text" #name="ngModel" [(ngModel)]="userService.selectedUser.rol" name="rol" placeholder="Rol" required [ngClass]="{'invalid-textbox' :registerForm.submitted && !rol.valid }">
