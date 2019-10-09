@@ -14,6 +14,7 @@ import { ListadecasosComponent } from './listadecasos/listadecasos.component';
 import { RegisterComponent } from './user/register/register.component';
 import { Component } from '@angular/core';
 import { NotificacionComponent } from './notificacion/notificacion.component';
+import { ListaIncidentesComponent } from './lista-incidentes/lista-incidentes.component';
 export const appRoutes: Routes =[
     {
         path: 'login', component: UserComponent,
@@ -65,5 +66,9 @@ export const appRoutes: Routes =[
     {
         path: 'notificacion',
         component: NotificacionComponent
+    },
+    {
+        path: 'listaincidentes',
+        component: ListaIncidentesComponent
     }
 ];
