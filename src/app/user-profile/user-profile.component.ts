@@ -30,5 +30,11 @@ export class UserProfileComponent implements OnInit {
     this.userService.deletToken();
     this.router.navigate(['/login']);
   }
+  goToEdit(){
+    this.router.navigate(['/adminusuario']);
+  }
+  goToReporte(){
+    this.router.navigate(['/generarreporte']);
+  }
 
 }
