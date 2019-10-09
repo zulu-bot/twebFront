@@ -13,6 +13,7 @@ import{ ListperfilComponent } from './listperfil/listperfil.component';
 import { ListadecasosComponent } from './listadecasos/listadecasos.component';
 import { RegisterComponent } from './user/register/register.component';
 import { Component } from '@angular/core';
+import { NotificacionComponent } from './notificacion/notificacion.component';
 export const appRoutes: Routes =[
     {
         path: 'login', component: UserComponent,
@@ -60,5 +61,9 @@ export const appRoutes: Routes =[
         path: 'register',
         component: UserComponent,
         children: [{path:'',component: RegisterComponent}]
+    },
+    {
+        path: 'notificacion',
+        component: NotificacionComponent
     }
 ];
