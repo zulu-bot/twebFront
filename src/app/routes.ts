@@ -13,7 +13,6 @@ import{ InvestigadorComponent } from './investigador/investigador.component';
 import{ ListperfilComponent } from './listperfil/listperfil.component';
 import { ListadecasosComponent } from './listadecasos/listadecasos.component';
 import { RegisterComponent } from './user/register/register.component';
-import { EditincidentComponent } from './editincident/editincident.component';
 import { Component } from '@angular/core';
 import { NotificacionComponent } from './notificacion/notificacion.component';
 import { AuthGuardAdmin } from './auth/authAdmin.guard';
