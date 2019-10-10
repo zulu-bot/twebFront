@@ -19,6 +19,7 @@ import { AuthGuardAdmin } from './auth/authAdmin.guard';
 import { AuthGuardResponsable } from './auth/authResponsable.guard';
 import { AuthGuardInvestigador } from './auth/authInvestigador.guard';
 import { AuthGuardEmpleado } from './auth/authEmpleado.guard';
+import { AuthGuardLog } from './auth/autLoged.guart';
 import { ListaIncidentesComponent } from './lista-incidentes/lista-incidentes.component';
 import {EditincidentComponent} from './editincident/editincident.component'
 export const appRoutes: Routes =[
@@ -37,12 +38,17 @@ export const appRoutes: Routes =[
         component: AdminperfilComponent
     },
     {
-        path: 'generarreporte',
-        component: GenerarreporteComponent
+        path: 'generarreporte', component: GenerarreporteComponent, canActivate: [AuthGuardLog]
+    },
+    {
+        path: '', redirectTo: '/login', pathMatch: 'full'
     },
     {
         path: 'listaincidente',
-        component: ListaIncidentesComponent
+        component: ListaIncidentesComponent, canActivate: [AuthGuardAdmin]
+    },
+    {
+        path: '', redirectTo: '/login', pathMatch: 'full'
     },
     {
     path: 'responsable',
