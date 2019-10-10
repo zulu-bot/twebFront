@@ -3,11 +3,6 @@
   <div *ngIf="incidentsForm.submitted && !idEmpleado.valid">
       <label class="validation-message">Campo Requerido.</label>
   </div>
-
-  <input type="text" #name="ngModel" [(ngModel)]="incidentsService.selectedIncident.idInvestigador" name="idInvestigador" placeholder="idInvestigador" required [ngClass]="{'invalid-textbox' :incidentsForm.submitted && !idInvestigador.valid }">
-  <div *ngIf="incidentsForm.submitted && !idInvestigador.valid">
-      <label class="validation-message">Campo Requerido.</label>
-  </div>
   <input type="text" #name="ngModel" [(ngModel)]="incidentsService.selectedIncident.descripcion" name="descripcion" placeholder="descripcion" required [ngClass]="{'invalid-textbox' :incidentsForm.submitted && !descripcion.valid }">
   <div *ngIf="incidentsForm.submitted && !descripcion.valid">
       <label class="validation-message">Campo Requerido.</label>
