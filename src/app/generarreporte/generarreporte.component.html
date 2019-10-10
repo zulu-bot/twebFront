@@ -1,14 +1,13 @@
 <form #incidentsForm="ngForm" (ngSubmit)="incidentsForm.valid && onSubmit(incidentsForm)">
-  <input type="text" #name="ngModel" [(ngModel)]="incidentsService.selectedIncident.idIncidente" name="idIncidente" placeholder="id Incidente" required [ngClass]="{'invalid-textbox' :incidentsForm.submitted && idIncidente.valid == undefined }">
-  <div *ngIf="incidentsForm.submitted && !idIncidente.valid">
-      <label class="validation-message">Campo Requerido.</label>
-  </div>
-
   <input type="text" #name="ngModel" [(ngModel)]="incidentsService.selectedIncident.idEmpleado" name="idEmpleado" placeholder="idEmpleado" required [ngClass]="{'invalid-textbox' :incidentsForm.submitted && !idEmpleado.valid }">
   <div *ngIf="incidentsForm.submitted && !idEmpleado.valid">
       <label class="validation-message">Campo Requerido.</label>
   </div>
 
+  <input type="text" #name="ngModel" [(ngModel)]="incidentsService.selectedIncident.idInvestigador" name="idInvestigador" placeholder="idInvestigador" required [ngClass]="{'invalid-textbox' :incidentsForm.submitted && !idInvestigador.valid }">
+  <div *ngIf="incidentsForm.submitted && !idInvestigador.valid">
+      <label class="validation-message">Campo Requerido.</label>
+  </div>
   <input type="text" #name="ngModel" [(ngModel)]="incidentsService.selectedIncident.descripcion" name="descripcion" placeholder="descripcion" required [ngClass]="{'invalid-textbox' :incidentsForm.submitted && !descripcion.valid }">
   <div *ngIf="incidentsForm.submitted && !descripcion.valid">
       <label class="validation-message">Campo Requerido.</label>

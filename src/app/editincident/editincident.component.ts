@@ -43,7 +43,7 @@ export class EditincidentComponent implements OnInit {
           if(incident){
             this.incident=incident;
             this.incident.href = incident._id.self.href;
-            console.log("sisas",incident);
+            console.log("sisaszxvcxz",incident);
 
           }
           else{
