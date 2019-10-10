@@ -3,6 +3,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../environments/environment';
 import { Incidents } from './shared/incidents.model';
 import { RouterLink } from '@angular/router';
+import { ListaIncidentesComponent } from './lista-incidentes/lista-incidentes.component';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -30,6 +32,11 @@ export class IncidentsService {
     return this.http.post(environment.apiBaseUrl+'/registerincident',incident);
   }
 
+
+get(_id: string) {
+  return this.http.get(environment.apiBaseUrl + '/listincident'+_id);
+}
+
   setToken(token: string){
     localStorage.setItem('token', token);
   }
@@ -47,6 +54,11 @@ export class IncidentsService {
     else
       return null;
   }
+
+  getAll(): Observable<any> {
+    return this.http.get(environment.apiBaseUrl + '/listincident');
+    
+}
 
 
   isLogged(){
