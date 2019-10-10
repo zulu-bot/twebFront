@@ -18,18 +18,27 @@ export class UserService {
     
   };
 
+  noAuthHeader = { headers: new HttpHeaders({ 'NoAuth': 'True' }) };
+
   constructor(private http: HttpClient) { }
 
   login(authCredentials){
-    return this.http.post(environment.apiBaseUrl + '/authenticate', authCredentials);
+    return this.http.post(environment.apiBaseUrl + '/authenticate', authCredentials, this.noAuthHeader);
   }
   
   register(user:User){
-    return this.http.post(environment.apiBaseUrl+'/register',user);
+    return this.http.post(environment.apiBaseUrl+'/register',user, this.noAuthHeader);
+  }
+
+  update(user: User){
+    return this.http.put(environment.apiBaseUrl+'/update', user );
   }
 
   setToken(token: string){
     localStorage.setItem('token', token);
+  }
+  getToken() {
+    return localStorage.getItem('token');
   }
 
   deletToken(){
@@ -46,6 +55,9 @@ export class UserService {
       return null;
   }
 
+  getUserProfile(){
+    return this.http.get(environment.apiBaseUrl + '/userProfile');
+  }
 
   isLogged(){
     var userInfo = this.getUserInfo();
@@ -57,6 +69,9 @@ export class UserService {
 
   getRolUsuario(){
     let usuario = this.getUserInfo();
+    if(usuario == null){
+      return null;
+    }
     return(usuario["rol"]);
     
   }

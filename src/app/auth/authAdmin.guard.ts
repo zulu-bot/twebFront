@@ -7,11 +7,14 @@ import { UserService } from '../shared/user.service';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthGuard implements CanActivate {
+export class AuthGuardAdmin implements CanActivate {
   constructor(private userService: UserService, private router: Router){}
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): boolean {
+        let rol = this.userService.getRolUsuario();
+        console.log("admin guard  ", rol);
+        
       if (!this.userService.isLogged()) {
         this.router.navigateByUrl('/login');
         this.userService.deletToken();
@@ -19,24 +22,14 @@ export class AuthGuard implements CanActivate {
 
         return false;
       }
-      let rol = this.userService.getRolUsuario();
-      console.log("authguard ", rol);
+      if (rol != "administrador") {
+        this.router.navigateByUrl('/login');
+        this.userService.deletToken();
+
+
+        return false;
+      }
       
-        if(rol == 'administrador'){
-          this.router.navigateByUrl('/administrador');
-        }
-        if(rol == 'investigador'){
-          this.router.navigateByUrl('/investigador');
-        }
-        if(rol == 'responsable'){
-          this.router.navigateByUrl('/responsable');
-        }
-        if(rol == 'empleado'){
-          this.router.navigateByUrl('/userprofile');
-        }
-        if(rol == 'asociado'){
-          this.router.navigateByUrl('/userprofile');
-        }        
      
     return true;
   }
