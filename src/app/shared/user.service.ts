@@ -30,6 +30,10 @@ export class UserService {
     return this.http.post(environment.apiBaseUrl+'/register',user, this.noAuthHeader);
   }
 
+  update(user: User){
+    return this.http.put(environment.apiBaseUrl+'/update', user );
+  }
+
   setToken(token: string){
     localStorage.setItem('token', token);
   }

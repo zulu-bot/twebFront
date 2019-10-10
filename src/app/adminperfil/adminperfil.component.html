@@ -1,1 +1,32 @@
-<p>adminperfil works!</p>
+        <td>
+            <form #updateForm = "ngForm" (ngSubmit)="updateForm.valid && onSubmit(updateForm)">
+                <input type="text" #name="ngModel" [(ngModel)]="userService.selectedUser.nombre" name="nombre" value="{{userDetails.nombre}}" required [ngClass]="{'invalid-textbox' :updateForm.submitted && !nombre.valid }">
+                <div *ngIf="updateForm.submitted && !nombre.valid">
+                    <label class="validation-message">Campo Requerido.</label>
+                </div>
+                <input type="text" #email="ngModel" [(ngModel)]="userService.selectedUser.email" name="email" value = "{{userDetails.email}}" required [pattern]="emailRegex" [ngClass]="{'invalid-textbox' :updateForm.submitted && !email.valid }">
+                <div *ngIf="updateForm.submitted && email.errors">
+                    <label *ngIf="email.errors.required" class="validation-message">Campo Requerido.</label>
+                    <label *ngIf="email.errors.pattern" class="validation-message">No es un email valido.</label>
+                </div>
+                <tr>
+                    <td colspan="2" class="text-center">
+                        <input type="submit" value="Actualizar">
+                    </td>
+                
+                    <td colspan="2" class="text-center">
+                            <input type="button" (click)="goBack()" value="Volver" />
+                    </td>
+                </tr>
+            </form>
+        </td>
+  
+<!-- Success message -->
+<div class="success" *ngIf="showSucessMessage">
+    Saved successfully
+</div>
+
+<!-- Error message -->
+<div class="alert" *ngIf="serverErrorMessages">
+    {{serverErrorMessages}}
+</div>
