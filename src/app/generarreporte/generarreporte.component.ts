@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { IncidentsService } from '../incidents.service';
+import { Router } from "@angular/router";
 
 
 @Component({
@@ -51,9 +52,12 @@ export class GenerarreporteComponent implements OnInit {
     }
 
 
-    constructor(private incidentsService: IncidentsService) { }
+    constructor(private incidentsService: IncidentsService, private router: Router) { }
 
   ngOnInit() {
+  }
+  goBack(){
+    this.router.navigate(['/redirecter']);
   }
 
 }

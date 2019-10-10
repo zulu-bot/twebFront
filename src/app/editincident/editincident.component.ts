@@ -75,6 +75,10 @@ export class EditincidentComponent implements OnInit {
         }
       );
     }
+    goBack(){
+      this.router.navigate(['/redirecter']);
+    }
+  
 
   
 
