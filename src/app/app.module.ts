@@ -33,6 +33,8 @@ import { ListperfilComponent } from './listperfil/listperfil.component';
 import { ListadecasosComponent } from './listadecasos/listadecasos.component';
 import { RegisterComponent } from './user/register/register.component';
 import { ListaIncidentesComponent } from './lista-incidentes/lista-incidentes.component';
+import { EditincidentComponent } from './editincident/editincident.component';
+
 
 @NgModule({
   declarations: [
@@ -50,7 +52,8 @@ import { ListaIncidentesComponent } from './lista-incidentes/lista-incidentes.co
     ListadecasosComponent,
     NotificacionComponent,
     RegisterComponent,
-    ListaIncidentesComponent
+    ListaIncidentesComponent,
+    EditincidentComponent
   
   ],
   imports: [

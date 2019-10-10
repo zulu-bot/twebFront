@@ -37,6 +37,10 @@ export class IncidentsService {
     
 }
 
+get(_id: string) {
+  return this.http.get(environment.apiBaseUrl + '/listincident' + '_id');
+}
+
   setToken(token: string){
     localStorage.setItem('token', token);
   }

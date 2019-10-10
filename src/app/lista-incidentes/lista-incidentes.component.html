@@ -1,3 +1,17 @@
-<div *ngFor="let incident of incidents">
-    
+
+    <div *ngFor="let incident of incidents">
+            <input type="submit" [routerLink]="['/editincident']" value={{incident._id}}> <br>
+            
+            
+            
+        
+
+    </div>
+
+    <div>
+
+    <input type="submit" [routerLink]="['/administrador']" value="volver">
+    <input type="text" value={{incident._id}}>
+
 </div>
+

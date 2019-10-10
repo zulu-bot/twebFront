@@ -12,22 +12,17 @@ import { Incidents } from '../shared/incidents.model';
 })
 export class ListaIncidentesComponent implements OnInit {
   incidents: Array<string> ;
+  bucket: any[]=[];
 
   constructor(private incidentsService:IncidentsService) { }
 
   ngOnInit() {
     this.incidentsService.getAll().subscribe(data => {
       this.incidents = data;
-      console.log("DATA",data);
-      this.incidents = data;
-      console.log("asdf", this.incidents);
+      console.log("sisas",this.incidents);
+      
     });
     
-    while(this.incidents == undefined)
-    {
-      console.log("asdf2eae");
-    }
-    console.log("asdf2", this.incidents.length);
     
 }
 
