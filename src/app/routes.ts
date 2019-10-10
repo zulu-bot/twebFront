@@ -20,6 +20,7 @@ import { AuthGuardResponsable } from './auth/authResponsable.guard';
 import { AuthGuardInvestigador } from './auth/authInvestigador.guard';
 import { AuthGuardEmpleado } from './auth/authEmpleado.guard';
 import { ListaIncidentesComponent } from './lista-incidentes/lista-incidentes.component';
+import {EditincidentComponent} from './editincident/editincident.component'
 export const appRoutes: Routes =[
     {
         path: 'login', component: UserComponent,
@@ -81,6 +82,10 @@ export const appRoutes: Routes =[
     {
         path: 'listadecasos',
         component: ListadecasosComponent
+    },
+    {
+        path: 'editincident',
+        component: EditincidentComponent
     },
     {
         path: 'register',
