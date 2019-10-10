@@ -7,6 +7,8 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { LogInComponent } from './user/log-in/log-in.component';
 import { UserComponent } from './user/user.component';
 import { NotificacionComponent } from './notificacion/notificacion.component';
+import { ListaIncidentesComponent} from './lista-incidentes/lista-incidentes.component';
+import { EditincidentComponent } from './editincident/editincident.component';
 
 
 import { FormsModule } from '@angular/forms';
@@ -52,7 +54,10 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
     ListadecasosComponent,
     NotificacionComponent,
     RegisterComponent,
-    RedirecterComponent
+    RedirecterComponent,
+    ListaIncidentesComponent,
+    EditincidentComponent
+
   
   ],
   imports: [

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { IncidentsService } from '../incidents.service';
 import { log } from 'util';
 import { Incidents } from '../shared/incidents.model';
+import { IncidentsService } from '../incidents.service';
 
 
 @Component({

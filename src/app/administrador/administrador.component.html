@@ -18,6 +18,10 @@
                     <input type="button" (click)="goEdit()" value="Administrar Perfil" />
                     <input type="button" (click)="goReporte()" value="Generar Nuevo Reporte" />
                     <input type="button" (click)="regist()" value="Registrar" />
+                    <input type="submit" [routerLink]="['/listaincidente']" value="Lista de Incidentes">
+        <br>
+        <input type="submit" [routerLink]="['/notificacion']" value="Enviar notificacion">
+                    
               </td>
             </tr>
             <tr>
