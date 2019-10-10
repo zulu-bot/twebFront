@@ -37,7 +37,7 @@ export class EditincidentComponent implements OnInit {
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
-      const _id = params['_id'];
+      const _id = params['idIncident'];
       if(_id){
         this.incidentsService.get(_id).subscribe((incident: any) => {
           if(incident){
