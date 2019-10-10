@@ -29,25 +29,7 @@ export class LogInComponent implements OnInit {
     this.userService.login(form.value).subscribe(
       res => {
         this.userService.setToken(res['token']);
-        let rol = this.userService.getRolUsuario();
-        if(rol == 'administrador'){
-          this.router.navigateByUrl('/administrador');
-        }
-        if(rol == 'investigador'){
-          this.router.navigateByUrl('/investigador');
-        }
-        if(rol == 'responsable'){
-          this.router.navigateByUrl('/responsable');
-        }
-        if(rol == 'empleado'){
-          this.router.navigateByUrl('/userprofile');
-        }
-        if(rol == 'asociado'){
-          this.router.navigateByUrl('/userprofile');
-        }
-
-        
-        
+        this.router.navigateByUrl('/redirecter');
       },
       err => {
         this.serverErrorMessages = err.console.error.message;
